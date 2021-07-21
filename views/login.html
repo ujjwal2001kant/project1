@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Login | Clickclinic</title>
+    <link rel="shortcut icon" href="../assets/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Garamond&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            background: lineargradient(rgba(255, 255, 255, 1),rgba(255, 255, 255, 1)),url("../assets/bread.jpg");
+            background-image: url("https://s3-us-east-2.amazonaws.com/maryville/wp-content/uploads/2018/03/12120000/nursing-professional.jpg");
+            background-repeat: no-repeat;
+            background-size: cover
+        }
+
+        #container {
+            position: absolute;
+            height: auto;
+            width: 35%;
+            left: 32.5%;
+            top: 22%;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid transparent;
+            border-radius: 10px;
+            text-align: center;
+            padding-bottom: 40px;
+            margin-bottom: 80px;
+        }
+
+        #form {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 20px;
+            margin: 10px 10px;
+            width: 80%;
+            outline: 0;
+            border: 0px transparent;
+            border-radius: 10px;
+            font-family: "Garamond";
+        }
+
+        #logo {
+            margin-top: 5px;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-family: "Garamond";
+        }
+
+        input[type="submit"] {
+            margin-top: 25px;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.8;
+        }
+
+        #user_admin {
+            position: absolute;
+            width: 35%;
+            top: 14%;
+            left: 32.5%;
+            text-align: center;
+        }
+
+        .b {
+            width: 30%;
+            padding: 8px;
+            font-family: "Garamond";
+            outline: none;
+            margin: 4px;
+            border-radius: 4px;
+            border: 0px solid transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img style="height: 100%; width: 5%" src="../assets/logo.png" />
+        <ul id="head_ul">
+            <a href="/index">
+                <li class="head_li">Home</li>
+            </a>
+            <a href="/about">
+                <li class="head_li">About us</li>
+            </a>
+            <a href="/donate">
+                <li class="head_li">Donate</li>
+            </a>
+            <a href="/articles">
+                <li class="head_li">Articles</li>
+            </a>
+            <a href="/login">
+                <li class="head_li">Login</li>
+            </a>
+        </ul>
+    </header>
+    <div id="user_admin">
+        <button class="b" style="background: #00008b; color: white">User</button>
+    </div>
+
+
+    <div id="container">
+        <div id="form">
+            <form action="/user" method="POST" onsubmit="return validate()">
+                <img id="logo" src="../assets/logo.png" />
+                <input type="text" name="username" id='username' placeholder="Username" required /><br />
+                <input type="password" name="password" id='pwd' placeholder="Password" required /><br />
+                <p style="text-align: center;font-size: 15px;color: red;font-family: 'Garamond';">
+                    Existing User?
+                </p>
+                <input type="submit" value="LOGIN" style="color: white; background: #00008b" />
+                <p id="p">
+                    Don't have an account?
+                    <span><a href="/signup">Sign up </a></span>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script>
+        var v1 = document.getElementById("username");
+        var v2 = document.getElementById("pwd");
+        function validate(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;  
+          
+        if (name==null || name==""){  
+          alert("Name can't be blank");
+          v1.style.border = "1px solid green";
+          return false;  
+        }else {
+            v1.style.border = "1px solid red";
+        }
+        
+        if(password.length<6){  
+          alert("Password must be at least 6 characters long.");
+          v2.style.border = "1px solid red";
+          return false;  
+        }
+        else {
+            v2.style.border = "1px solid green";
+        }
+        }  
+    </script>
+    <footer>
+        <div style="display: inline">
+            <span style="padding-top: 15px; padding-left: 15px; float: left">
+                ClickClinic � 2020 Website Designed & Maintenance By RS Techies</span>
+            <div style="display: inline; float: right; margin-right: 30px">
+                <a href="https://www.facebook.com/unitednations/" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/UN?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter"></a>
+                <a href="https://in.linkedin.com/company/unitednations" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/unitednations" class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
